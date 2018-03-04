@@ -1,0 +1,13 @@
+.about {
+    &__profile-photo {
+        background: url('../img/profile.png');
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    &__profile-info {
+        background: $lightGrey;
+        padding: 80px 40px;
+    }
+}

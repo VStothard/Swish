@@ -1,0 +1,54 @@
+.header {
+    background: url('../img/workspace.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    min-height: 100vh;
+    position: relative;
+    
+
+    &__info {
+        background: $slate-semi;
+        min-height: 100vh;
+        padding-left: 20px;
+        width: 100%;
+        transform: all 0.2s;
+
+        @include breakpoint(large) {
+            padding-left: 40px;
+            width: 50%;
+            transform: all 0.2s;
+        }
+    }
+
+    &__logo {
+        margin-left: -20px;
+        width: 100px;
+
+        &-svg {
+            fill: $white;
+            width: 100%;
+        }
+    }
+
+    &__intro {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--text {
+            margin: 90px 0 50px;
+        }
+
+        &--links {
+            margin-bottom: 90px;
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        bottom: 10vh;
+    }
+}

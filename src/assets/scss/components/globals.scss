@@ -1,0 +1,28 @@
+//COLORS
+
+$lightGrey: #F8F7F8;
+$sandy: #E4B498;
+$slate: #373339;
+$slate-semi: rgba(55, 51, 57, 0.8);
+$white: #ffffff;
+
+//typography settings
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: $sandy;
+    }
+}
+//typography classes
+.text-orange {
+    color: $sandy;
+}
+
+.text-bold {
+    font-weight: 700;
+}

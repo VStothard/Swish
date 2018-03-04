@@ -51,3 +51,14 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+//globals
+@import 'components/globals';
+
+//atoms 
+@import 'atoms/button';
+
+//components
+@import 'components/stripe';
+@import 'components/header';
+@import 'components/about';
