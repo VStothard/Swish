@@ -1,0 +1,64 @@
+.blog {
+    position: relative;
+
+    &__item {
+        margin-top: 100px;
+
+        @include breakpoint(medium) {
+            margin-top: 150px;
+        }
+
+        &:last-child {
+            margin-bottom: 100px;
+
+            @include breakpoint(medium) {
+                margin-top: 150px;
+            }
+        }
+
+        &-img {
+            background: url('https://source.unsplash.com/random/700x2000');
+            background-size: cover;
+            height: 380px;
+            width: 100%;
+        }
+
+        &-preview {
+            transform: translateY(-80px);
+        }
+
+        &-heading {
+            background: $lightGrey;
+            padding: 30px 30px 0;
+
+            &-clip {
+                background: $lightGrey;
+                margin-left: -1px;
+                -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+                clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            }
+        }
+
+        &-desc {
+            background: $lightGrey;
+            padding: 10px 30px 40px;
+
+            .read {
+                display: block;
+                color: $sandy;
+                font-weight: 700;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.stripe-orange {
+    position: absolute;
+    background: $sandy;
+    content: ' ';
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
