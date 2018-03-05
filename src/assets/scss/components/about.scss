@@ -2,12 +2,13 @@
     &__profile-photo {
         background: url('../img/profile.png');
         background-position: center;
-        background-size: 100% auto;
+        background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
 
         @include breakpoint(large) {
             height: auto;
+            background-size: 100% auto;
         }
     }
 

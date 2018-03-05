@@ -2,8 +2,12 @@
     // border: 1px solid red;
 
     &__item {
-        margin-top: 200px;
+        margin-top: 100px;
         position: relative;
+
+        @include breakpoint(medium) {
+            margin-top: 200px;
+        }
 
         &:last-child {
             margin-bottom: 100px;
@@ -18,7 +22,11 @@
             overflow: hidden;
             position: relative;
             transition: 3000ms all ease;
-            width: 70%;
+            width: 100%;
+
+            @include breakpoint(medium) {
+                width: 70%;
+            }
             
             &:hover {
                 background-position: center bottom;
@@ -29,11 +37,15 @@
         &-desc {
             background: $lightGrey;
             padding: 30px 40px;
-            position: absolute;
-            width: 40%;
-
+            position: initial;
+            width: 100%;
             top: 70px;
             right: 0;
+
+            @include breakpoint(medium) {
+                position: absolute;
+                width: 40%;
+            }
         }
 
         &-link {
