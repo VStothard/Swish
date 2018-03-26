@@ -1,0 +1,21 @@
+.social {            
+    .icon {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 10px;
+        transition: 0.2s transform ease;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            transform: rotate(8deg);
+            transition: 0.2s transform ease;
+        }
+    }
+}

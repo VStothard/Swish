@@ -1,0 +1,35 @@
+.subscribe {
+    background: url('../img/desks.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    text-align: center;
+
+    p {
+        color: $white;
+        font-size: 30px;
+    }
+
+    .btn {
+        margin: 40px 0 0;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+
+        .input-field {
+            padding: 25px 20px;
+            margin-right: 20px;
+            flex: 8;
+        }
+
+        .form-btn {
+            flex: 2;
+        }
+    }
+
+}

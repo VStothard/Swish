@@ -36,3 +36,27 @@
 .btn-swipe-right:hover::after {
   width: 100%;
 }
+
+//INVERSE
+
+.btn-inverse {
+  border: 3px solid $white;
+  
+  &.btn-swipe-right::after {
+    background: $white;
+  }
+
+  &:hover {
+    color: $sandy;
+  }
+}
+
+//FORM BTN
+
+.form-btn {
+  background: $sandy;
+
+  &:hover {
+    background: $slate;
+  }
+}
