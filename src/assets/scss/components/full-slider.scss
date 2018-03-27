@@ -5,4 +5,39 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 80px 0;
+
+    .slider {
+        background: none;
+        height: auto;
+    }
+
+    .slick-slide {
+        color: $white;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .slider-quote,
+    .slider-quote-name {
+        display: block;
+    }
+
+    .slider-quote-name {
+        color: $sandy;
+        margin: 20px 0;
+
+        &:before {
+            content: '~ ';
+            color: $sandy;
+        }
+    }
+
+    .slick-dots li button:before {
+        color: $white;
+        font-size: 15px;
+    }
+
+    .slick-dots li.slick-active button:before {
+        color: $sandy;
+    }
 }

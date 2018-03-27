@@ -1,0 +1,107 @@
+.navigation {
+    background: $slate;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    &[data-active='true'] {
+        @include breakpoint(large) {
+            transform: translateY(0px);
+            transition: all 0.5s ease;
+        }
+    }
+
+    &[data-active='false'] {
+        @include breakpoint(large) {
+            transform: translateY(-200px);
+            transition: all 0.5s ease;
+        }
+    }
+
+    &__logo {
+        padding-top: 4px;
+        text-align: left;
+
+        @include breakpoint(large) {
+            text-align: center;
+        }
+
+        svg {
+            max-width: 40px;
+            width: 100%;
+        }
+    }
+
+    &__mob-menu {
+        display: block;
+
+        @include breakpoint(large) {
+            display: none;
+        }
+
+        .menu {
+            float: right;
+            width: 48px;
+        }
+
+        .line {
+            border: 2px solid white;
+            display: block;
+            margin: 4px;
+            width: 35px;
+            transition: all 0.4s ease;
+            
+            .open & {
+                margin: 50px;
+            }
+        }
+
+        .open {
+            .line {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(10px, 10px);
+                    transition: all 0.4s ease;
+                }
+                  
+                &:nth-child(2) {
+                    // opacity: 0;
+                    transform: rotateY(90deg);
+                    transition: all 0.4s ease;
+                }
+                  
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -8px);
+                    transition: all 0.4s ease;
+                }
+            }
+        }
+
+    }
+
+    &__items {
+        border: 1px solid red;
+        height: 100vh;
+
+        @include breakpoint(large) {
+            height: auto;
+        }
+    }
+
+    &__item-list {
+        color: $white;
+        display: block;
+        margin: 0;
+        padding: 8px 0 0;
+
+        @include breakpoint(large) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+        list-style: none;
+    }
+}

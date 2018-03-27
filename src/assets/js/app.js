@@ -1,12 +1,37 @@
-import $ from 'jquery';
-import whatInput from 'what-input';
+import "babel-polyfill";
 
-window.$ = $;
+/**
+ * Import Classes
+ */
+import {
+  Component,
+  featureCarousel,
+  navigation
+} from './modules';
 
-import Foundation from 'foundation-sites';
-// If you want to pick and choose which modules to include, comment out the above and uncomment
-// the line below
-//import './lib/foundation-explicit-pieces';
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM content loaded');
 
+  /**
+   * Classes
+   */
+  // new Browser();
+  new Component();
 
-$(document).foundation();
+  /**
+   * Views
+   * Run on a particular page.
+   */
+  
+
+  /**
+   * Components
+   */
+
+  new featureCarousel();
+  new navigation();
+
+  /**
+   * Init modules
+   */
+});
