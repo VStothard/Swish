@@ -90,11 +90,6 @@
         position: relative;
         z-index: 900;
 
-        @include breakpoint(large) {
-            height: auto;
-            padding: 10px;
-        }
-
         &[data-active='true'] {
             height: 100vh;
             padding: 10px 20px;
@@ -106,6 +101,17 @@
             height: 0;
             transform: translateY(-400px);
             transition: all 0.5s ease;
+        }
+
+        @include breakpoint(large) {
+
+            &[data-active='true'],
+            &[data-active='false'] {
+                height: auto;
+                padding: 10px;
+                transform: translateY(0px);
+                transition: all 0.5s ease;
+            }
         }
 
 
@@ -130,11 +136,16 @@
         font-weight: 700;
 
         @include breakpoint(large) {
+            font-size: initial;
             font-weight: 300;
         }
 
         &::before {
             content: "// ";
+
+            @include breakpoint (large) {
+                content: '';
+            }
         }
     }
 }
