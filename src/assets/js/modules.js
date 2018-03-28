@@ -10,8 +10,7 @@ export * from './classes/component';
 // Components
 export * from './components/featureCarousel';
 export * from './components/navigation';
-
-
+export * from './components/modal';
 
 // Services
 

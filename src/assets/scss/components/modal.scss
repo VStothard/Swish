@@ -1,0 +1,46 @@
+.no-scroll {
+    position: fixed;
+}
+
+.modal {
+    background: $slate;
+    height: 100vh;
+    opacity: 0.98;
+    width: 100vw;
+    position: fixed;
+    z-index: 2000;
+    top: 0; //set by jquery position
+    left: 0;
+    right: 0;
+
+    &[data-active="true"] {
+        display: block;
+    }
+
+    &[data-active="false"] {
+        display: none;
+    }
+
+    &__close {
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 20px;
+        right: 0;
+
+        .line {
+            border: 2px solid white;
+            display: block;
+            margin: 4px;
+            width: 35px;
+
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(-2px, -1px);
+            }
+              
+            &:nth-child(2) {
+                transform: rotate(-45deg) translate(7px, -8px);
+            }
+        }
+    }
+}

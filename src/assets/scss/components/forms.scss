@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+
+    [type='text'], 
+    [type='password'], 
+    [type='date'], 
+    [type='datetime'], 
+    [type='datetime-local'], 
+    [type='month'], 
+    [type='week'], 
+    [type='email'], 
+    [type='number'], 
+    [type='search'], 
+    [type='tel'], 
+    [type='time'], 
+    [type='url'], 
+    [type='color'], 
+    textarea {
+        background-color: rgba(0,0,0,0);
+        color: $white;
+        outline: 1px solid $white;
+        margin: 10px 0;
+        min-width: 100%;
+        width: 100%;
+
+        &:focus {
+            background-color: rgba(0,0,0,0);
+            color: $white;
+        }
+    }
+
+    textarea {
+        min-height: 200px;
+    }
+}

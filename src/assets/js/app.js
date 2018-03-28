@@ -6,7 +6,8 @@ import "babel-polyfill";
 import {
   Component,
   featureCarousel,
-  navigation
+  navigation,
+  modal
 } from './modules';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   new featureCarousel();
   new navigation();
+  new modal();
 
   /**
    * Init modules

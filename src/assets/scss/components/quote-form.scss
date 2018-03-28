@@ -1,0 +1,42 @@
+.quote-form {
+    color: $white;
+    padding: 80px 0;
+    text-align: center;
+    height: 100vh;
+    overflow: scroll;
+
+    &[data-active="true"] {
+        display: block;
+    }
+
+    &[data-active="false"] {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+    }
+
+    &[data-active="true"] {
+        position: fixed; 
+        top: 0;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        height: 100vh;
+        overflow: scroll;
+        width: 600px;
+        z-index: 2100;
+    }
+
+    &__logo {
+        margin-bottom: 20px;
+
+        svg {
+            width: 50px;
+        }
+    }
+
+}

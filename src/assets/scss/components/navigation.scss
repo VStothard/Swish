@@ -48,6 +48,7 @@
         }
 
         .menu {
+            cursor: pointer;
             float: right;
             width: 48px;
         }
@@ -58,10 +59,7 @@
             margin: 4px;
             width: 35px;
             transition: all 0.4s ease;
-            
-            .open & {
-                margin: 50px;
-            }
+
         }
 
         .open {
