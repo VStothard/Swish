@@ -18,6 +18,7 @@ class navigation extends Component {
     super('C04');
 
     const self = this;
+
     console.log('running c04');
 
     self.isInView();
@@ -35,7 +36,7 @@ class navigation extends Component {
           let pageOffset = window.pageYOffset;
 
           if (pageOffset > headerPosition) {
-              nav.attr('data-active', 'true');
+            nav.attr('data-active', 'true');
           } else {
             nav.attr('data-active', 'false');
           }
@@ -43,8 +44,16 @@ class navigation extends Component {
   }
 
   menuToggle() {
+    const navItems = $('.navigation__items');
+
     $('.menu').on('click', function() {
       $(this).toggleClass('open');
+      console.log(this);
+      if ($(this).hasClass('open')) {
+        navItems.attr('data-active', 'true');
+      } else {
+        navItems.attr('data-active', 'false');
+      }
     });
   }
 }

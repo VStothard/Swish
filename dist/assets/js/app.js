@@ -20220,6 +20220,7 @@ var navigation = function (_Component) {
     var _this = _possibleConstructorReturn(this, (navigation.__proto__ || Object.getPrototypeOf(navigation)).call(this, 'C04'));
 
     var self = _this;
+
     console.log('running c04');
 
     self.isInView();
@@ -20249,8 +20250,16 @@ var navigation = function (_Component) {
   }, {
     key: 'menuToggle',
     value: function menuToggle() {
+      var navItems = $('.navigation__items');
+
       $('.menu').on('click', function () {
         $(this).toggleClass('open');
+        console.log(this);
+        if ($(this).hasClass('open')) {
+          navItems.attr('data-active', 'true');
+        } else {
+          navItems.attr('data-active', 'false');
+        }
       });
     }
   }]);

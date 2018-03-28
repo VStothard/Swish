@@ -1,28 +1,30 @@
 .navigation {
     background: $slate;
-    padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 
     &[data-active='true'] {
-        @include breakpoint(large) {
+        // @include breakpoint(large) {
             transform: translateY(0px);
             transition: all 0.5s ease;
-        }
+        // }
     }
 
     &[data-active='false'] {
-        @include breakpoint(large) {
+        // @include breakpoint(large) {
             transform: translateY(-200px);
             transition: all 0.5s ease;
-        }
+        // }
     }
 
     &__logo {
-        padding-top: 4px;
+        background: $slate;
+        padding: 14px 10px 10px;
         text-align: left;
+        position: relative;
+        z-index: 1000;
 
         @include breakpoint(large) {
             text-align: center;
@@ -35,7 +37,11 @@
     }
 
     &__mob-menu {
+        background: $slate;
         display: block;
+        padding: 10px;
+        position: relative;
+        z-index: 1000;
 
         @include breakpoint(large) {
             display: none;
@@ -81,12 +87,28 @@
     }
 
     &__items {
-        border: 1px solid red;
-        height: 100vh;
+        position: relative;
+        z-index: 900;
 
         @include breakpoint(large) {
             height: auto;
+            padding: 10px;
         }
+
+        &[data-active='true'] {
+            height: 100vh;
+            padding: 10px 20px;
+            transform: translateY(0px);
+            transition: all 0.5s ease;
+        }
+    
+        &[data-active='false'] {
+            height: 0;
+            transform: translateY(-400px);
+            transition: all 0.5s ease;
+        }
+
+
     }
 
     &__item-list {
@@ -103,5 +125,16 @@
 
     &__item {
         list-style: none;
+        margin: 10px 0;
+        font-size: 25px;
+        font-weight: 700;
+
+        @include breakpoint(large) {
+            font-weight: 300;
+        }
+
+        &::before {
+            content: "// ";
+        }
     }
 }
