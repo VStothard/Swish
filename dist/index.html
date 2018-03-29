@@ -44,10 +44,10 @@
                 </div>
                 <div class="navigation__items small-12 large-4 large-offset-7" data-active="false">
                     <ul class="navigation__item-list">
-                        <li class="navigation__item"><a href="#">ABOUT</a></li>
-                        <li class="navigation__item"><a href="#">WORK</a></li>
-                        <li class="navigation__item"><a href="#">BLOG</a></li>
-                        <li class="navigation__item"><a href="#">CONTACT</a></li>
+                        <li class="navigation__item"><a href="#about">ABOUT</a></li>
+                        <li class="navigation__item"><a href="#work">WORK</a></li>
+                        <li class="navigation__item"><a href="#blog">BLOG</a></li>
+                        <li class="navigation__item"><a href="#contact">CONTACT</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,17 +81,17 @@
               Front End Developer
             </h2>
             <p class="header__intro--links text-bold">
-              <a href="#">ABOUT</a><span>  //  </span>
-              <a href="#">WORK</a><span>  //  </span>
-              <a href="#">BLOG</a>
+              <a href="#about">ABOUT</a><span>  //  </span>
+              <a href="#work">WORK</a><span>  //  </span>
+              <a href="#blog">BLOG</a>
             </p>
           </div>
           <div class="header__cta button__outline">
-              <button class="btn btn-swipe-right"><span>GET QUOTE</span></button>
+              <button class="quote-btn btn btn-swipe-right"><span>GET QUOTE</span></button>
           </div> 
         </div>
       </div>
-    </div><div class="about grid-container">
+    </div><div id="about" class="about grid-container">
       <div class="grid-x">
         <div class="small-12 large-5 large-offset-1 cell about__profile-photo">
           <!--<img src="assets/img/profile.png" alt="Verity Stothard profile photo">-->
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </div>
-    </div><div class="portfolio grid-container">
+    </div><div id="work" class="portfolio grid-container">
         <div class="grid-x">
             <div class="portfolio__item large-10 large-offset-1 cell">
                 <div class="portfolio__item-preview"></div>
@@ -173,7 +173,7 @@
                 </div>
             </div>
         </div>
-    </div><div class="cta-bar">
+    </div><div id="contact" class="cta-bar">
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cta-bar__text small-10 small-offset-1 medium-8 medium-offset-2">
@@ -182,7 +182,7 @@
                 </div>
             </div>
         </div>
-    </div><div class="blog">
+    </div><div id="blog" class="blog">
         <div class="grid-container">
             <div class="grid-x">
                 <div class="stripe-orange large-5 large-offset-1 cell"></div>
@@ -240,7 +240,7 @@
                 <div class="subscribe__text small-10 small-offset-1 medium-8 medium-offset-2">
                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
                     <form accept-charset="UTF-8" action="https://usebasin.com/f/e39b02ec4e28" method="POST">
-                        <input class="input-field" id="email" name="email" type="email" placeholder="Your email...">
+                        <input class="input-field" id="email" name="sub-email" type="email" placeholder="Your email...">
                         <button class="button form-btn" type="submit">SUBMIT</button>
                     </form>
                 </div>
@@ -290,7 +290,7 @@
                 </div>
             </div>
         </div>
-    </div><div class="quote-form" data-active="true">
+    </div><div class="quote-form" data-active="false">
         <div class="quote-form__logo">
             <?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <svg viewBox="0 0 383 277" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -314,14 +314,33 @@
             <h2>Let's get to know each other</h2>
             <p>First, tell me a bit about your project, and I will be in touch soon to schedule a call.</p>
         </div>
-        <form>
+        <form class="quote-form__form" accept-charset="UTF-8" action="https://usebasin.com/f/e39b02ec4e28" enctype="multipart/form-data" method="POST">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="email" placeholder="Your name" required>
+    
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="email" required>
+    
+            <label for="url">Current website</label>
+            <input type="url" id="url" name="url" placeholder="Current website">
+    
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+          
+            <textarea name="query" placeholder="Tell me about your project - what is it? Why are your doing it? Who is your target market? What are your goals for the website? How can I help you? What is your timeline and budget for the project?" required>
+            </textarea>
+          
+            <button class="button form-btn" type="submit">SUBMIT</button>
+          </form>
+        <!-- <form class="quote-form__form">
             <input type="text" name="firstname" placeholder="Name" class="small-2">
             <input type="email" name="email" placeholder="Email">
             <input type="url" name="website" placeholder="Website">
             <input type="tel" name="phone" placeholder="Phone">
             <textarea name="query" placeholder="Tell me about your project - what is it? Why are your doing it? Who is your target market? What are your goals for the website? How can I help you? What is your timeline and budget for the project?"></textarea>
-        </form>
-    </div><div class="modal" data-active="true">
+            <button class="button form-btn" type="submit">SUBMIT</button>
+        </form> -->
+    </div><div class="modal" data-active="false">
         <div class="modal__close">
             <span class='line'></span>
             <span class='line'></span>

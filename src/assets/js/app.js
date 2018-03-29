@@ -7,7 +7,8 @@ import {
   Component,
   featureCarousel,
   navigation,
-  modal
+  modal,
+  smoothScroll
 } from './modules';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new featureCarousel();
   new navigation();
   new modal();
+  new smoothScroll();
 
   /**
    * Init modules

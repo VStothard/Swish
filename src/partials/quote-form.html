@@ -1,4 +1,4 @@
-<div class="quote-form" data-active="true">
+<div class="quote-form" data-active="false">
     <div class="quote-form__logo">
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <svg viewBox="0 0 383 277" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,11 +22,30 @@
         <h2>Let's get to know each other</h2>
         <p>First, tell me a bit about your project, and I will be in touch soon to schedule a call.</p>
     </div>
-    <form>
+    <form class="quote-form__form" accept-charset="UTF-8" action="https://usebasin.com/f/e39b02ec4e28" enctype="multipart/form-data" method="POST">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="email" placeholder="Your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="email" required>
+
+        <label for="url">Current website</label>
+        <input type="url" id="url" name="url" placeholder="Current website">
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+      
+        <textarea name="query" placeholder="Tell me about your project - what is it? Why are your doing it? Who is your target market? What are your goals for the website? How can I help you? What is your timeline and budget for the project?" required>
+        </textarea>
+      
+        <button class="button form-btn" type="submit">SUBMIT</button>
+      </form>
+    <!-- <form class="quote-form__form">
         <input type="text" name="firstname" placeholder="Name" class="small-2">
         <input type="email" name="email" placeholder="Email">
         <input type="url" name="website" placeholder="Website">
         <input type="tel" name="phone" placeholder="Phone">
         <textarea name="query" placeholder="Tell me about your project - what is it? Why are your doing it? Who is your target market? What are your goals for the website? How can I help you? What is your timeline and budget for the project?"></textarea>
-    </form>
+        <button class="button form-btn" type="submit">SUBMIT</button>
+    </form> -->
 </div>

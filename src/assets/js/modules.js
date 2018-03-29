@@ -11,6 +11,7 @@ export * from './classes/component';
 export * from './components/featureCarousel';
 export * from './components/navigation';
 export * from './components/modal';
+export * from './components/smoothScroll';
 
 // Services
 
