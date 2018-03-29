@@ -20411,6 +20411,8 @@ var smoothScroll = function (_Component) {
   _createClass(smoothScroll, [{
     key: 'scroll',
     value: function scroll() {
+
+      //CSS TICKS SMOOTH SCROLL
       $('a[href*="#"]')
       // Remove links that don't actually link to anything
       .not('[href="#"]').not('[href="#0"]').click(function (event) {
