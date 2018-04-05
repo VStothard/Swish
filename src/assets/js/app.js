@@ -6,6 +6,7 @@ import "babel-polyfill";
 import {
   Component,
   featureCarousel,
+  blogCarousel,
   navigation,
   modal,
   smoothScroll
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
   new navigation();
   new modal();
   new smoothScroll();
+  new blogCarousel();
+
 
   /**
    * Init modules

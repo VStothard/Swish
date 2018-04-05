@@ -119,7 +119,7 @@
         color: $white;
         display: block;
         margin: 0;
-        padding: 8px 0 0;
+        padding: 0;
 
         @include breakpoint(large) {
             display: flex;

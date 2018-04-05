@@ -52,6 +52,15 @@
                 text-align: right;
             }
         }
+
+        &-single {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 50px;
+                margin-top: 50px;
+            }
+        }
     }
 
     &__cta {

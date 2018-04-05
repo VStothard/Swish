@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 349);
+/******/ 	return __webpack_require__(__webpack_require__.s = 350);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -367,7 +367,7 @@ module.exports = function (NAME, exec) {
 "use strict";
 
 
-var pIE = __webpack_require__(48);
+var pIE = __webpack_require__(49);
 var createDesc = __webpack_require__(37);
 var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(26);
@@ -413,7 +413,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(47);
+var IObject = __webpack_require__(48);
 var defined = __webpack_require__(23);
 module.exports = function (it) {
   return IObject(defined(it));
@@ -494,7 +494,7 @@ module.exports = function (method, arg) {
 // 5 -> Array#find
 // 6 -> Array#findIndex
 var ctx = __webpack_require__(19);
-var IObject = __webpack_require__(47);
+var IObject = __webpack_require__(48);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var asc = __webpack_require__(65);
@@ -703,7 +703,7 @@ if (__webpack_require__(6)) {
   var toAbsoluteIndex = __webpack_require__(40);
   var toPrimitive = __webpack_require__(26);
   var has = __webpack_require__(11);
-  var classof = __webpack_require__(46);
+  var classof = __webpack_require__(47);
   var isObject = __webpack_require__(4);
   var toObject = __webpack_require__(9);
   var isArrayIter = __webpack_require__(72);
@@ -1542,62 +1542,6 @@ module.exports = function (it, TYPE) {
 "use strict";
 
 
-// getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(18);
-var TAG = __webpack_require__(5)('toStringTag');
-// ES3 wrong here
-var ARG = cof(function () {
-  return arguments;
-}()) == 'Arguments';
-
-// fallback for IE11 Script Access Denied error
-var tryGet = function tryGet(it, key) {
-  try {
-    return it[key];
-  } catch (e) {/* empty */}
-};
-
-module.exports = function (it) {
-  var O, T, B;
-  return it === undefined ? 'Undefined' : it === null ? 'Null'
-  // @@toStringTag case
-  : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
-  // builtinTag case
-  : ARG ? cof(O)
-  // ES3 arguments fallback
-  : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-};
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(18);
-// eslint-disable-next-line no-prototype-builtins
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-  return cof(it) == 'String' ? it.split('') : Object(it);
-};
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.f = {}.propertyIsEnumerable;
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1681,6 +1625,62 @@ var Component = function () {
 }();
 
 exports.Component = Component;
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__(18);
+var TAG = __webpack_require__(5)('toStringTag');
+// ES3 wrong here
+var ARG = cof(function () {
+  return arguments;
+}()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function tryGet(it, key) {
+  try {
+    return it[key];
+  } catch (e) {/* empty */}
+};
+
+module.exports = function (it) {
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+  // @@toStringTag case
+  : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+  // builtinTag case
+  : ARG ? cof(O)
+  // ES3 arguments fallback
+  : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = __webpack_require__(18);
+// eslint-disable-next-line no-prototype-builtins
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.f = {}.propertyIsEnumerable;
 
 /***/ }),
 /* 50 */
@@ -2996,7 +2996,7 @@ module.exports = function (name) {
 "use strict";
 
 
-var classof = __webpack_require__(46);
+var classof = __webpack_require__(47);
 var ITERATOR = __webpack_require__(5)('iterator');
 var Iterators = __webpack_require__(42);
 module.exports = __webpack_require__(22).getIteratorMethod = function (it) {
@@ -3182,7 +3182,7 @@ module.exports = function (iter, ITERATOR) {
 
 var aFunction = __webpack_require__(10);
 var toObject = __webpack_require__(9);
-var IObject = __webpack_require__(47);
+var IObject = __webpack_require__(48);
 var toLength = __webpack_require__(8);
 
 module.exports = function (that, callbackfn, aLen, memo, isRight) {
@@ -3405,7 +3405,7 @@ module.exports = {
 
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(46);
+var classof = __webpack_require__(47);
 var from = __webpack_require__(95);
 module.exports = function (NAME) {
   return function toJSON() {
@@ -3709,9 +3709,9 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 var getKeys = __webpack_require__(36);
 var gOPS = __webpack_require__(58);
-var pIE = __webpack_require__(48);
+var pIE = __webpack_require__(49);
 var toObject = __webpack_require__(9);
-var IObject = __webpack_require__(47);
+var IObject = __webpack_require__(48);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -3831,7 +3831,7 @@ module.exports = function (object, names) {
 
 var getKeys = __webpack_require__(36);
 var toIObject = __webpack_require__(17);
-var isEnum = __webpack_require__(48).f;
+var isEnum = __webpack_require__(49).f;
 module.exports = function (isEntries) {
   return function (it) {
     var O = toIObject(it);
@@ -4204,7 +4204,7 @@ module.exports = function (module) {
 
 __webpack_require__(131);
 
-var _modules = __webpack_require__(348);
+var _modules = __webpack_require__(349);
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOM content loaded');
@@ -4228,6 +4228,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new _modules.navigation();
   new _modules.modal();
   new _modules.smoothScroll();
+  new _modules.blogCarousel();
 
   /**
    * Init modules
@@ -5076,7 +5077,7 @@ module.exports = function (hint) {
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(36);
 var gOPS = __webpack_require__(58);
-var pIE = __webpack_require__(48);
+var pIE = __webpack_require__(49);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -5353,7 +5354,7 @@ var toIObject = __webpack_require__(17);
 var arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(48) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
   join: function join(separator) {
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
@@ -6584,7 +6585,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(79).set });
 
 // 19.1.3.6 Object.prototype.toString()
 
-var classof = __webpack_require__(46);
+var classof = __webpack_require__(47);
 var test = {};
 test[__webpack_require__(5)('toStringTag')] = 'z';
 if (test + '' != '[object z]') {
@@ -6627,7 +6628,7 @@ $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt }
 var LIBRARY = __webpack_require__(33);
 var global = __webpack_require__(2);
 var ctx = __webpack_require__(19);
-var classof = __webpack_require__(46);
+var classof = __webpack_require__(47);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(4);
 var aFunction = __webpack_require__(10);
@@ -8005,7 +8006,7 @@ if (!USE_NATIVE) {
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
   __webpack_require__(35).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(48).f = $propertyIsEnumerable;
+  __webpack_require__(49).f = $propertyIsEnumerable;
   __webpack_require__(58).f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__(33)) {
@@ -20062,11 +20063,73 @@ module.exports = isString;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.blogCarousel = undefined;
+
+var _component = __webpack_require__(46);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import $ from 'jquery';
+
+
+// import { Device } from '../modules';
+// var contentful = require('contentful');
+// var config = require('config');
+
+// const autocomplete = require('autocomplete.js');
+
+/**
+ * featureCarousel Carousel Component
+ *
+ * @class featureCarousel
+ * @extends {Component}
+ */
+var blogCarousel = function (_Component) {
+  _inherits(blogCarousel, _Component);
+
+  /**
+   * Creates an instance of featureCarousel.
+   *
+   * @memberof blogCarousel
+   */
+  function blogCarousel() {
+    _classCallCheck(this, blogCarousel);
+
+    var _this = _possibleConstructorReturn(this, (blogCarousel.__proto__ || Object.getPrototypeOf(blogCarousel)).call(this, 'C05'));
+
+    var self = _this;
+    console.log('running c03');
+    $(".blog-slider").slick({
+      autoplay: true,
+      infinite: true,
+      arrows: false,
+      dots: false
+    });
+    return _this;
+  }
+
+  return blogCarousel;
+}(_component.Component);
+
+exports.blogCarousel = blogCarousel;
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.featureCarousel = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _component = __webpack_require__(49);
+var _component = __webpack_require__(46);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20180,7 +20243,7 @@ var featureCarousel = function (_Component) {
 exports.featureCarousel = featureCarousel;
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20193,7 +20256,7 @@ exports.modal = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _component = __webpack_require__(49);
+var _component = __webpack_require__(46);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20266,7 +20329,7 @@ var modal = function (_Component) {
 exports.modal = modal;
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20279,7 +20342,7 @@ exports.navigation = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _component = __webpack_require__(49);
+var _component = __webpack_require__(46);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20322,18 +20385,24 @@ var navigation = function (_Component) {
     value: function isInView() {
       console.log('scrollin');
       var nav = $('.navigation');
-      var headerElm = $('#header');
-      var headerPosition = headerElm.offset().top + headerElm.outerHeight(true) - 100;
 
-      $(window).on('scroll', function () {
-        var pageOffset = window.pageYOffset;
+      if (nav.parent().hasClass('home-nav')) {
+        var headerElm = $('#header');
+        var headerPosition = headerElm.offset().top + headerElm.outerHeight(true) - 100;
 
-        if (pageOffset > headerPosition) {
-          nav.attr('data-active', 'true');
-        } else {
-          nav.attr('data-active', 'false');
-        }
-      });
+        $(window).on('scroll', function () {
+          var pageOffset = window.pageYOffset;
+
+          if (pageOffset > headerPosition) {
+            nav.attr('data-active', 'true');
+          } else {
+            nav.attr('data-active', 'false');
+          }
+        });
+      } else if (nav.parent().hasClass('blog-nav')) {
+        nav.attr('data-active', 'true');
+        $('body').css('padding-top', $('.navigation').height() - 2);
+      }
     }
   }, {
     key: 'menuToggle',
@@ -20358,7 +20427,7 @@ var navigation = function (_Component) {
 exports.navigation = navigation;
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20371,7 +20440,7 @@ exports.smoothScroll = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _component = __webpack_require__(49);
+var _component = __webpack_require__(46);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20452,7 +20521,7 @@ var smoothScroll = function (_Component) {
 exports.smoothScroll = smoothScroll;
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20462,7 +20531,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _component = __webpack_require__(49);
+var _component = __webpack_require__(46);
 
 Object.keys(_component).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -20474,7 +20543,7 @@ Object.keys(_component).forEach(function (key) {
   });
 });
 
-var _featureCarousel = __webpack_require__(344);
+var _featureCarousel = __webpack_require__(345);
 
 Object.keys(_featureCarousel).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -20486,7 +20555,19 @@ Object.keys(_featureCarousel).forEach(function (key) {
   });
 });
 
-var _navigation = __webpack_require__(346);
+var _blogCarousel = __webpack_require__(344);
+
+Object.keys(_blogCarousel).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _blogCarousel[key];
+    }
+  });
+});
+
+var _navigation = __webpack_require__(347);
 
 Object.keys(_navigation).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -20498,7 +20579,7 @@ Object.keys(_navigation).forEach(function (key) {
   });
 });
 
-var _modal = __webpack_require__(345);
+var _modal = __webpack_require__(346);
 
 Object.keys(_modal).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -20510,7 +20591,7 @@ Object.keys(_modal).forEach(function (key) {
   });
 });
 
-var _smoothScroll = __webpack_require__(347);
+var _smoothScroll = __webpack_require__(348);
 
 Object.keys(_smoothScroll).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -20523,7 +20604,7 @@ Object.keys(_smoothScroll).forEach(function (key) {
 });
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(130);

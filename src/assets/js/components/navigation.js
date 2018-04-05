@@ -29,10 +29,12 @@ class navigation extends Component {
   isInView() {
       console.log('scrollin');
       const nav = $('.navigation');
-      const headerElm = $('#header');
-      const headerPosition = headerElm.offset().top + headerElm.outerHeight(true) - 100;
 
-      $(window).on('scroll', function() {
+      if (nav.parent().hasClass('home-nav')) {
+        const headerElm = $('#header');
+        const headerPosition = headerElm.offset().top + headerElm.outerHeight(true) - 100;
+
+        $(window).on('scroll', function() {
           let pageOffset = window.pageYOffset;
 
           if (pageOffset > headerPosition) {
@@ -40,7 +42,11 @@ class navigation extends Component {
           } else {
             nav.attr('data-active', 'false');
           }
-      });
+        });
+      } else if (nav.parent().hasClass('blog-nav')) {
+        nav.attr('data-active', 'true');
+        $('body').css('padding-top', ($('.navigation').height() - 2));
+      }
   }
 
   menuToggle() {
