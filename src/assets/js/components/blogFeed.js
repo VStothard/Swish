@@ -126,21 +126,22 @@ class blogFeed extends Component {
     response.items.forEach(function (entry) {
         var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
 
-        //TODO swap this out with handlebars templating
-        var blogTile = '<div data-id="A07" class="A07-blog-feed-tile small-12">'
-                          + '<div class="bf-feature-image">'
-                            + '<img src="https:' + entry.fields.featuredImage.fields.file.url + '" alt="' + entry.fields.featuredImage.fields.description + '">' 
-                          + '</div>'
-                          + '<div class="bf-content-overlap">'
-                            + '<div class="bf-heading">'
-                              + '<h2>' + entry.fields.title + '</h2>'
-                            + '</div>'
-                            + '<div class="bf-desc">'
-                              + '<p>' + entry.fields.postPreview + '</p>'
-                            + '</div>'
-                            + '<a class="bf-button button bold" href="' + postURL + '">Read post</a>'
-                          + '</div>'
-                        + '</div>';
+        var blogTile = '<div data-id="A07" class="A07-blog-feed-tile small-12">HELLO</div>'
+        // //TODO swap this out with handlebars templating
+        // var blogTile = '<div data-id="A07" class="A07-blog-feed-tile small-12">'
+        //                   + '<div class="bf-feature-image">'
+        //                     + '<img src="https:' + entry.fields.featuredImage.fields.file.url + '" alt="' + entry.fields.featuredImage.fields.description + '">' 
+        //                   + '</div>'
+        //                   + '<div class="bf-content-overlap">'
+        //                     + '<div class="bf-heading">'
+        //                       + '<h2>' + entry.fields.title + '</h2>'
+        //                     + '</div>'
+        //                     + '<div class="bf-desc">'
+        //                       + '<p>' + entry.fields.postPreview + '</p>'
+        //                     + '</div>'
+        //                     + '<a class="bf-button button bold" href="' + postURL + '">Read post</a>'
+        //                   + '</div>'
+        //                 + '</div>';
         
         //add the entry to the element
         html = html + blogTile;
