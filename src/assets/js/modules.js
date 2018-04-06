@@ -13,6 +13,7 @@ export * from './components/blogCarousel';
 export * from './components/navigation';
 export * from './components/modal';
 export * from './components/smoothScroll';
+export * from './components/blogFeed';
 
 // Services
 
