@@ -26,7 +26,6 @@ class blogFeed extends Component {
 
     const self = this;
     self.getPosts(); //send request to get posts
-
   }
 
   getPosts() {
@@ -53,7 +52,7 @@ class blogFeed extends Component {
     // from contentful, get the total number of entries, and set inital limits
     var totalPosts = 0; //create var for total number of posts and set to a number
     var numPages; // create var for the total number of pages
-    const perPage = 10; //limit number of posts per page
+    const perPage = 1; //limit number of posts per page
     var toSkip = page * perPage; //calculate what post to load from 
 
     //if page number exists in URL, run the getEntries again and set the pagination/blog posts to the right page
@@ -119,29 +118,24 @@ class blogFeed extends Component {
     //create the element you will be plugging into the blog feed container
     var html = '';
 
-    //for each item there is, create an A07 blog tile
-      //Todo 
-        // - limit the number of entries per page, implement pagination
-        // - limit the number of words that can show up in the blog tile, it should be a preview not the whole post
     response.items.forEach(function (entry) {
         var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
 
-        var blogTile = '<div data-id="A07" class="A07-blog-feed-tile small-12">HELLO</div>'
-        // //TODO swap this out with handlebars templating
-        // var blogTile = '<div data-id="A07" class="A07-blog-feed-tile small-12">'
-        //                   + '<div class="bf-feature-image">'
-        //                     + '<img src="https:' + entry.fields.featuredImage.fields.file.url + '" alt="' + entry.fields.featuredImage.fields.description + '">' 
-        //                   + '</div>'
-        //                   + '<div class="bf-content-overlap">'
-        //                     + '<div class="bf-heading">'
-        //                       + '<h2>' + entry.fields.title + '</h2>'
-        //                     + '</div>'
-        //                     + '<div class="bf-desc">'
-        //                       + '<p>' + entry.fields.postPreview + '</p>'
-        //                     + '</div>'
-        //                     + '<a class="bf-button button bold" href="' + postURL + '">Read post</a>'
-        //                   + '</div>'
-        //                 + '</div>';
+        var blogTile =  '<div class="blog__item">' +
+                            '<div class="blog__item-img">' +
+                                '<img src="https:' + entry.fields.featuredImage.fields.file.url +'" alt="">' +
+                            '</div>' +
+                            '<div class="blog__item-preview grid-x">' +
+                                '<div class="blog__item-heading small-10 cell">' +
+                                    '<h3>' + entry.fields.title + '</h3>' +
+                                '</div>' +
+                                '<div class="blog__item-heading-clip small-2 cell"></div>' +
+                                '<div class="blog__item-desc small-12">' +
+                                    '<p>' + entry.fields.postPreview + '</p>' +
+                                    '<a class="read" href="' + postURL + '">READ POST</a>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
         
         //add the entry to the element
         html = html + blogTile;

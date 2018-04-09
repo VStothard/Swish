@@ -16,8 +16,8 @@ class Component {
    */
 
   constructor(id) {
-    // this.componentId = isString(id) ? id : '';
-    // this.elements;
+    this.componentId = isString(id) ? id : '';
+    this.elements;
     const dataID = id;
     this.exists(dataID);
   }
@@ -29,26 +29,26 @@ class Component {
    * @memberof Component
    */
   exists(dataID) {
-    // this.elements = document.querySelectorAll(`[data-id='${this.componentId.toLowerCase()}']`);
-    // // console.log(this.elements, 1000);
+    this.elements = document.querySelectorAll(`[data-id='${this.componentId.toLowerCase()}']`);
+    // console.log(this.elements, 1000);
 
 
-    // if (!isElement(this.elements[0])) {
-    //   console.info(`Component ${this.componentId.toUpperCase()} Node ✖ is not present, aborting.`);
-    // } else {
-    //   console.info(`Component ${this.componentId.toUpperCase()} Node ✔ is present, running class.`);
-    // }
+    if (!isElement(this.elements[0])) {
+      console.info(`Component ${this.componentId.toUpperCase()} Node ✖ is not present, aborting.`);
+    } else {
+      console.info(`Component ${this.componentId.toUpperCase()} Node ✔ is present, running class.`);
+    }
 
-    // return isElement(this.elements[0]);
+    return isElement(this.elements[0]);
 
     // const self = this;
-    $("div[data-id]").each(function() {
-        // if exists, execute alertBar
-        if ($(this).data("id") === dataID) {
-            console.log(dataID + ' exists');
-            return isElement(dataID);
-        }
-    });
+    // $("div[data-id]").each(function() {
+    //     // if exists, execute alertBar
+    //     if ($(this).data("id") === dataID) {
+    //         console.log(dataID + ' exists');
+    //         return isElement(dataID);
+    //     }
+    // });
   }
 }
 
