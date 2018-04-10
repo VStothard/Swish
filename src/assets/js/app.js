@@ -10,7 +10,9 @@ import {
   navigation,
   modal,
   smoothScroll,
-  blogFeed
+  blogFeed,
+  blogTiles,
+  blogPost
 } from './modules';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -38,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
   new smoothScroll();
   new blogCarousel();
   new blogFeed();
+  new blogTiles();
+  new blogPost();
 
 
   /**

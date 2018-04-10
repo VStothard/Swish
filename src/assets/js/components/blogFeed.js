@@ -52,7 +52,7 @@ class blogFeed extends Component {
     // from contentful, get the total number of entries, and set inital limits
     var totalPosts = 0; //create var for total number of posts and set to a number
     var numPages; // create var for the total number of pages
-    const perPage = 1; //limit number of posts per page
+    const perPage = 10; //limit number of posts per page
     var toSkip = page * perPage; //calculate what post to load from 
 
     //if page number exists in URL, run the getEntries again and set the pagination/blog posts to the right page

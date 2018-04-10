@@ -32,6 +32,16 @@
                 background-position: center bottom;
                 transition: 5000ms all ease;
             }
+
+            &-advisian {
+                background: url('../img/advisian.png');
+                background-size: cover;
+            }
+
+            &-blog {
+                background: url('../img/blog.png');
+                background-size: cover;
+            }
         }
 
         &-desc {

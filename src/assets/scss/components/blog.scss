@@ -1,35 +1,30 @@
 .blog {
     position: relative;
-    padding-bottom: 100px;
+    padding: 100px 0;
 
     &__item {
-        margin-top: 100px;
+        // margin-top: 50px;
 
-        @include breakpoint(medium) {
-            margin-top: 150px;
-        }
+        // @include breakpoint(medium) {
+        //     margin-top: 100px;
+        // }
 
-        &:last-child {
-            margin-bottom: 100px;
+        // &:last-child {
+        //     margin-bottom: 100px;
 
-            @include breakpoint(medium) {
-                margin-top: 150px;
-            }
-        }
+        //     @include breakpoint(medium) {
+        //         margin-top: 150px;
+        //     }
+        // }
 
         &-img {
             // background: url('https://source.unsplash.com/random/700x2000');
             // // background: black;
-            // background-size: cover;
-            // height: 380px;
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
+            height: 380px;
             width: 100%;
-
-            img {
-                object-fit: cover;
-                width: 780px;
-                height: 380px;
-            }
         }
 
         &-preview {
