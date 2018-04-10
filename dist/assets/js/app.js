@@ -29641,7 +29641,7 @@ var blogFeed = function (_Component) {
       response.items.forEach(function (entry) {
         var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
 
-        var blogTile = '<div class="blog__item">' + '<div class="blog__item-img">' + '<img src="https:' + entry.fields.featuredImage.fields.file.url + '" alt="">' + '</div>' + '<div class="blog__item-preview grid-x">' + '<div class="blog__item-heading small-10 cell">' + '<h3>' + entry.fields.title + '</h3>' + '</div>' + '<div class="blog__item-heading-clip small-2 cell"></div>' + '<div class="blog__item-desc small-12">' + '<p>' + entry.fields.postPreview + '</p>' + '<a class="read" href="' + postURL + '">READ POST</a>' + '</div>' + '</div>' + '</div>';
+        var blogTile = '<div class="blog__item">' + '<div class="blog__item-img" style="background-image: url(' + entry.fields.featuredImage.fields.file.url + ')"></div>' + '<div class="blog__item-preview grid-x">' + '<div class="blog__item-heading small-10 cell">' + '<h3>' + entry.fields.title + '</h3>' + '</div>' + '<div class="blog__item-heading-clip small-2 cell"></div>' + '<div class="blog__item-desc small-12">' + '<p>' + entry.fields.postPreview + '</p>' + '<a class="read" href="' + postURL + '">READ POST</a>' + '</div>' + '</div>' + '</div>';
 
         //add the entry to the element
         html = html + blogTile;

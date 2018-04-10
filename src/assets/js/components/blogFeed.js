@@ -122,9 +122,7 @@ class blogFeed extends Component {
         var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
 
         var blogTile =  '<div class="blog__item">' +
-                            '<div class="blog__item-img">' +
-                                '<img src="https:' + entry.fields.featuredImage.fields.file.url +'" alt="">' +
-                            '</div>' +
+                            '<div class="blog__item-img" style="background-image: url(' + entry.fields.featuredImage.fields.file.url + ')"></div>' +
                             '<div class="blog__item-preview grid-x">' +
                                 '<div class="blog__item-heading small-10 cell">' +
                                     '<h3>' + entry.fields.title + '</h3>' +
