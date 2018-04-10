@@ -37,7 +37,7 @@
 
             &-clip {
                 background: $lightGrey;
-                margin-left: -1px;
+                margin-bottom: -1px;
                 -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
                 clip-path: polygon(0 0, 0% 100%, 100% 100%);
             }
@@ -76,7 +76,6 @@
     content: ' ';
     height: 100%;
     top: 0;
-    left: 0;
     z-index: -1;
 }
 
