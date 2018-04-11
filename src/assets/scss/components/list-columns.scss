@@ -1,0 +1,34 @@
+.C03-list-columns {
+    background: url('../img/desks.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    padding: 80px 0;
+    text-align: center;
+
+    @include breakpoint(medium) {
+        padding: 70px;
+    }
+    
+    ul {
+        list-style: none;
+        position: relative;
+        text-align: left;
+
+        .list-icon {
+            height: 30px;
+            position: absolute;
+            left: -40px;
+
+            svg {
+                height: 25px;
+            }
+        }
+
+        li {
+            margin: 15px 0;
+        }
+    }
+}
