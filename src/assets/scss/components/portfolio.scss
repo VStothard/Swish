@@ -24,7 +24,7 @@
             transition: 3000ms all ease;
             width: 100%;
 
-            @include breakpoint(medium) {
+            @include breakpoint(large) {
                 width: 70%;
             }
             
@@ -57,7 +57,7 @@
             top: 70px;
             right: 0;
 
-            @include breakpoint(medium) {
+            @include breakpoint(large) {
                 position: absolute;
                 width: 40%;
             }

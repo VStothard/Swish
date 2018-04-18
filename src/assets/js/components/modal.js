@@ -1,5 +1,7 @@
 // import $ from 'jquery';
 import { Component } from '../classes/component';
+import forEach from 'lodash/forEach';
+
 
 /**
  * modal Carousel Component
@@ -19,17 +21,29 @@ class modal extends Component {
 
     const self = this;
 
-    console.log('running c04');
-
+    self.checkState();
     self.modalClose();
     self.quoteToggle();    
+  }
+
+  checkState() {
+    const body = $('body');
+    const modal = $('.modal');
+    var page = window.location.search.split('submit=')[1];
+    const quoteThanks = $('.quote-form-thankyou');
+    
+    if (page === 'thankyou') {
+      console.log('thankyou', 9000);
+      body.addClass('no-scroll');
+      modal.attr('data-active', 'true');
+      quoteThanks.attr('data-active', 'true');
+    }
   }
 
   modalClose() {
     const body = $('body');
     const modal = $('.modal');
     const quoteForm = $('.quote-form');
-    console.log('click event running');
 
     modal.on('click', function(e) {
       body.removeClass('no-scroll');
@@ -43,11 +57,13 @@ class modal extends Component {
     const modal = $('.modal');
     const quoteForm = $('.quote-form');
     const quoteBtn = $('.quote-btn');
+    const quoteThanks = $('.quote-form-thankyou');
 
     quoteBtn.on('click', function() {
       body.addClass('no-scroll');
       modal.attr('data-active', 'true');
       quoteForm.attr('data-active', 'true');
+      quoteThanks.attr('data-active', 'false');
     });
   }
 }
