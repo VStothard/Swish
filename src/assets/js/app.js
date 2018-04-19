@@ -12,7 +12,8 @@ import {
   smoothScroll,
   blogFeed,
   blogTiles,
-  blogPost
+  blogPost,
+  ctaAccordion
 } from './modules';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   new blogFeed();
   new blogTiles();
   new blogPost();
+  new ctaAccordion();
 
 
   /**

@@ -21,9 +21,9 @@ class modal extends Component {
 
     const self = this;
 
-    self.checkState();
-    self.modalClose();
-    self.quoteToggle();    
+    // self.checkState();
+    // self.modalClose();
+    // self.quoteToggle();    
   }
 
   checkState() {

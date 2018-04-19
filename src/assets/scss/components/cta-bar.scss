@@ -4,10 +4,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: $white;
     padding: 80px 0;
     text-align: center;
 
-    p {
+    .feature-text {
         color: $white;
         font-size: 30px;
     }
@@ -16,4 +17,20 @@
         margin: 40px 0 0;
     }
 
+}
+
+.cta-form {
+    overflow: hidden;
+    transition: height 0.5s ease;
+
+    &[data-active=true] {
+        height: auto;
+        transition: height 0.5s ease;
+
+    }
+
+    &[data-active=false] {
+        height: 0;
+        transition: height 0.5s ease;
+    }
 }

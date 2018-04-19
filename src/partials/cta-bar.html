@@ -2,8 +2,30 @@
     <div class="grid-container">
         <div class="grid-x">
             <div class="cta-bar__text small-10 small-offset-1 medium-8 medium-offset-2">
-                <p>I am currently available to take on new projects, I'd love to hear about how I can help you.</p>
-                <button class="quote-btn btn btn-swipe-right"><span>LET'S CHAT</span></button>
+                <p class="feature-text">I am currently available to take on new projects, I'd love to hear about how I can help you.</p>
+                <div class="cta-form" data-active="false">
+                    <div class="quote-form__intro">
+                        <p>First, tell me a bit about your project, and I will be in touch soon to schedule a call.</p>
+                    </div>
+                    <form class="quote-form__form" accept-charset="UTF-8" action="https://usebasin.com/f/e39b02ec4e28" enctype="multipart/form-data" method="POST">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="email" placeholder="Your name" required>
+                
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="email" required>
+                
+                        <label for="url">Current website</label>
+                        <input type="url" id="url" name="url" placeholder="Current website">
+                
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        
+                        <textarea name="query" placeholder="Tell me about your project - what is it? Why are your doing it? Who is your target market? What are your goals for the website? How can I help you? What is your timeline and budget for the project?" required></textarea>
+                        
+                        <button class="button form-btn" type="submit">SUBMIT</button>
+                    </form>
+                </div>
+                <button class="accord-btn btn btn-swipe-right"><span>LET'S CHAT</span></button>
             </div>
         </div>
     </div>

@@ -51,6 +51,7 @@ class blogTiles extends Component {
     // get all blog posts and render to the page
     client.getEntries({
       content_type: '2wKn6yEnZewu2SCCkus4as',
+      'fields.tags': 'technology',
       limit: 3
     })
     .then((response) => {

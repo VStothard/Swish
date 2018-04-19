@@ -55,6 +55,18 @@
   }
 }
 
+.btn-original {
+  border: 3px solid $sandy;
+  
+  &.btn-swipe-right::after {
+    background: $sandy;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
 //FORM BTN
 
 .form-btn {
