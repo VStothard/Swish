@@ -29908,10 +29908,9 @@ var blogTiles = function (_Component) {
                     console.log(entry);
 
                     var slideBackground = 'https:' + entry.fields.featuredImage.fields.file.url;
-                    var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
-                    //http://localhost:8000/blog-post.html?id=62RxrOSmeQWqQSsgo4WaAa
+                    var postURL = 'https://www.veritystothard.com/blog/blog-post.html?id=' + entry.sys.id;
+                    //http://localhost:8000/blog/blog-post.html?id=62RxrOSmeQWqQSsgo4WaAa
 
-                    console.log(slideBackground, 3000);
 
                     //TODO swap this out with handlebars templating
                     var blogTile = '<div class="blog__item">' + '<div class="blog__item-img" style="background-image: url(' + slideBackground + ')"></div>' + '<div class="blog__item-preview grid-x">' + '<div class="blog__item-heading small-10 cell">' + '<h3>' + entry.fields.title + '</h3>' + '</div>' + '<div class="blog__item-heading-clip small-2 cell"></div>' + '<div class="blog__item-desc small-12">' + '<p>' + entry.fields.postPreview + '</p>' + '<a href="' + postURL + '" class="read">READ ON</a>' + '</div>' + '</div>' + '</div>';

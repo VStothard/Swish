@@ -62,10 +62,9 @@ class blogTiles extends Component {
             console.log(entry);
 
             var slideBackground = 'https:' + entry.fields.featuredImage.fields.file.url;
-            var postURL = window.location.origin + '/blog-post.html?id=' + entry.sys.id;
-            //http://localhost:8000/blog-post.html?id=62RxrOSmeQWqQSsgo4WaAa
+            var postURL = 'https://www.veritystothard.com/blog/blog-post.html?id=' + entry.sys.id;
+            //http://localhost:8000/blog/blog-post.html?id=62RxrOSmeQWqQSsgo4WaAa
 
-            console.log(slideBackground, 3000);
 
             //TODO swap this out with handlebars templating
             var blogTile = '<div class="blog__item">' +
